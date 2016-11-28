@@ -1,0 +1,218 @@
+@import "_reset";
+
+$fontTrebuchet: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+$fontArial: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$colorGrey: #878787;
+$colorDarkGrey: #515151;
+$colorDarkerGrey: #404040;
+$colorDarkestGrey: #3c3c3c;
+$colorBlue: #0481c2;
+
+.wrapper {
+    margin: 0 auto;
+    width: 950px;
+}
+
+.header {
+    height: 150px;
+}
+
+.logo {
+    float: left;
+    height: 150px;
+    &__link {
+        display: block;
+        margin-top: 50px;
+    }
+}
+
+.menu {
+    float: right;
+    margin-top: 65px;
+    &__item {
+        float: left;
+        margin-right: 25px;
+        &--footer {
+            margin-right: 6px;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__link {
+        font: 20px/1 $fontTrebuchet;
+        text-decoration: none;
+        color: $colorGrey;
+        &:hover {
+            color: $colorBlue;
+        }
+        &--footer {
+            display: block;
+            height: 22px;
+            width: 22px;
+        }
+        &--facebook {
+            background: url(../img/sprite.png) 0 0 no-repeat;
+        }
+        &--twitter {
+            background: url(../img/sprite.png) -29px 0 no-repeat;
+        }
+        &--linkedin {
+            background: url(../img/sprite.png) -56px 0 no-repeat;
+        }
+        &--myspace {
+            background: url(../img/sprite.png) -83px 0 no-repeat;
+        }
+        &--rss {
+            background: url(../img/sprite.png) -112px 0 no-repeat;
+        }
+    }
+    &--footer {
+        float: left;
+        margin-top: 9px;
+    }
+}
+
+.main {
+    height: 634px;
+}
+
+.news,
+.maincontent {
+    box-sizing: border-box;
+    padding: 20px 0;
+    height: 100%;
+    border-top: 5px solid $colorBlue;
+    border-bottom: 5px solid $colorBlue;
+}
+
+.news {
+    float: left;;
+    width: 230px;
+    &__heading {
+        padding: 21px 0 7px;
+        font: 24px/1 $fontTrebuchet;
+        color: $colorBlue;
+        border-bottom: 1px solid $colorDarkGrey;
+    }
+}
+
+.search {
+    padding: 5px;
+    width: 228px;
+    border: 1px solid $colorDarkGrey;
+    &__wrapper {
+        position: relative;
+    }
+    &__wrapper:before {
+        position: absolute;
+        top: 4px;
+        right: 7px;
+        height: 19px;
+        width: 19px;
+        content: '';
+        background: url(../img/sprite.png) -143px -4px no-repeat;
+    }
+}
+
+.maincontent {
+    float: right;
+    width: 710px;
+    .article:last-child {
+        margin-right: 0;
+    }
+}
+
+.clearfix:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.article {
+    float: left;
+    margin-right: 10px;
+    width: 230px;
+    &--news {
+        float: none;
+        margin-right: 0;
+        padding: 23px 0;
+        width: 100%;
+        border-bottom: 1px solid $colorDarkerGrey;
+    }
+    &__heading {
+        overflow: hidden;
+        margin: 12px 0;
+        max-height: 18px;
+        font: 18px/1 $fontTrebuchet;
+        a {
+            color: $colorBlue;
+            text-decoration: none;
+        }
+        &--news {
+            margin: 0 0 17px;
+            max-height: 14px;
+            font-size: 14px;
+        }
+    }
+    &__text {
+        overflow: hidden;
+        margin-bottom: 15px;
+        max-height: 70px;
+        font: 12px/14px $fontArial;
+        color: $colorDarkestGrey;
+        text-align: justify;
+        letter-spacing: -0.1px;
+        &--news {
+            max-height: 56px;
+            color: $colorDarkerGrey;
+            letter-spacing: 0;
+        }
+    }
+    &__link {
+        font: 12px/14px $fontArial;
+        color: $colorGrey;
+        text-decoration: none;
+        &--text {
+            color: $colorBlue;
+            text-decoration: underline;
+        }
+    }
+}
+
+.banner {
+    margin-bottom: 35px;
+    height: 300px;
+    width: 100%;
+    background: url(../img/banner.png) 0 0 no-repeat;
+    &__content {
+        float: right;
+        margin-right: 1px;
+        height: 100%;
+        width: 204px;
+        color: white;
+        background-color: rgba(170, 170, 170, 0.47);
+    }
+    &__heading {
+        margin: 73px 0 25px 0;
+        font: 18px/1 $fontTrebuchet;
+        text-align: center;
+    }
+    &__text {
+        padding: 0 16px;
+        font: 12px/14px $fontArial;
+        text-align: justify;
+        letter-spacing: -0.8px;
+    }
+}
+
+.footer {
+    height: 100px;
+}
+
+.copyright {
+    float: right;
+    margin-top: 13px;
+    font: 12px/14px $fontArial;
+    color: $colorDarkerGrey;
+}

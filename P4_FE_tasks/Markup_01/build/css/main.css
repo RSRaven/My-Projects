@@ -1,0 +1,211 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.wrapper {
+  margin: 0 auto;
+  width: 950px; }
+
+.header {
+  height: 150px; }
+
+.logo {
+  float: left;
+  height: 150px; }
+  .logo__link {
+    display: block;
+    margin-top: 50px; }
+
+.menu {
+  float: right;
+  margin-top: 65px; }
+  .menu__item {
+    float: left;
+    margin-right: 25px; }
+    .menu__item--footer {
+      margin-right: 6px; }
+    .menu__item:last-child {
+      margin-right: 0; }
+  .menu__link {
+    font: 20px/1 "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+    text-decoration: none;
+    color: #878787; }
+    .menu__link:hover {
+      color: #0481c2; }
+    .menu__link--footer {
+      display: block;
+      height: 22px;
+      width: 22px; }
+    .menu__link--facebook {
+      background: url(../img/sprite.png) 0 0 no-repeat; }
+    .menu__link--twitter {
+      background: url(../img/sprite.png) -29px 0 no-repeat; }
+    .menu__link--linkedin {
+      background: url(../img/sprite.png) -56px 0 no-repeat; }
+    .menu__link--myspace {
+      background: url(../img/sprite.png) -83px 0 no-repeat; }
+    .menu__link--rss {
+      background: url(../img/sprite.png) -112px 0 no-repeat; }
+  .menu--footer {
+    float: left;
+    margin-top: 9px; }
+
+.main {
+  height: 634px; }
+
+.news,
+.maincontent {
+  box-sizing: border-box;
+  padding: 20px 0;
+  height: 100%;
+  border-top: 5px solid #0481c2;
+  border-bottom: 5px solid #0481c2; }
+
+.news {
+  float: left;
+  width: 230px; }
+  .news__heading {
+    padding: 21px 0 7px;
+    font: 24px/1 "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+    color: #0481c2;
+    border-bottom: 1px solid #515151; }
+
+.search {
+  padding: 5px;
+  width: 228px;
+  border: 1px solid #515151; }
+  .search__wrapper {
+    position: relative; }
+  .search__wrapper:before {
+    position: absolute;
+    top: 4px;
+    right: 7px;
+    height: 19px;
+    width: 19px;
+    content: '';
+    background: url(../img/sprite.png) -143px -4px no-repeat; }
+
+.maincontent {
+  float: right;
+  width: 710px; }
+  .maincontent .article:last-child {
+    margin-right: 0; }
+
+.clearfix:after {
+  display: block;
+  content: '';
+  clear: both; }
+
+.article {
+  float: left;
+  margin-right: 10px;
+  width: 230px; }
+  .article--news {
+    float: none;
+    margin-right: 0;
+    padding: 23px 0;
+    width: 100%;
+    border-bottom: 1px solid #404040; }
+  .article__heading {
+    overflow: hidden;
+    margin: 12px 0;
+    max-height: 18px;
+    font: 18px/1 "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif; }
+    .article__heading a {
+      color: #0481c2;
+      text-decoration: none; }
+    .article__heading--news {
+      margin: 0 0 17px;
+      max-height: 14px;
+      font-size: 14px; }
+  .article__text {
+    overflow: hidden;
+    margin-bottom: 15px;
+    max-height: 70px;
+    font: 12px/14px Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: #3c3c3c;
+    text-align: justify;
+    letter-spacing: -0.1px; }
+    .article__text--news {
+      max-height: 56px;
+      color: #404040;
+      letter-spacing: 0; }
+  .article__link {
+    font: 12px/14px Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: #878787;
+    text-decoration: none; }
+    .article__link--text {
+      color: #0481c2;
+      text-decoration: underline; }
+
+.banner {
+  margin-bottom: 35px;
+  height: 300px;
+  width: 100%;
+  background: url(../img/banner.png) 0 0 no-repeat; }
+  .banner__content {
+    float: right;
+    margin-right: 1px;
+    height: 100%;
+    width: 204px;
+    color: white;
+    background-color: rgba(170, 170, 170, 0.47); }
+  .banner__heading {
+    margin: 73px 0 25px 0;
+    font: 18px/1 "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+    text-align: center; }
+  .banner__text {
+    padding: 0 16px;
+    font: 12px/14px Arial, "Helvetica Neue", Helvetica, sans-serif;
+    text-align: justify;
+    letter-spacing: -0.8px; }
+
+.footer {
+  height: 100px; }
+
+.copyright {
+  float: right;
+  margin-top: 13px;
+  font: 12px/14px Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #404040; }
