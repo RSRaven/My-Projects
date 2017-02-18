@@ -57,6 +57,8 @@ function drawPhotos(photos) {
     div.appendChild(img);
     gallery.appendChild(div);
   }
+
+  get('https://randomuser.me/api/', renderProfile);
 }
 
 function renderProfile(users) {
@@ -65,6 +67,8 @@ function renderProfile(users) {
   name.innerHTML = `${profile.name.first} ${profile.name.last}`;
   phone.innerHTML = profile.phone;
   email.innerHTML = profile.email;
+
+  get('https://randomuser.me/api/?results=15', renderFriends);
 }
 
 function renderFriends(users) {
@@ -80,6 +84,3 @@ function renderFriends(users) {
 }
 
 get('/photo', drawPhotos);
-get('https://randomuser.me/api/', renderProfile);
-get('https://randomuser.me/api/?results=15', renderFriends);
-
