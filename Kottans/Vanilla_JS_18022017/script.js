@@ -1,6 +1,5 @@
 'use strict';
 
-
 let gallery = document.getElementById('gallery');
 let avatar = document.querySelector('.avatar');
 let name = document.querySelector('.name');
@@ -31,17 +30,20 @@ function addReply() {
   replies.appendChild(reply);
 }
 
-function get(url, callback) {
-  let xhr = new XMLHttpRequest();
-
-  xhr.onreadystatechange = function(e) {
-    if (xhr.status === 200 && xhr.readyState === 4) {
-      callback(JSON.parse(xhr.responseText));
-    }
-  }
-
-  xhr.open('GET', url, true);
-  xhr.send();
+function get(url) {
+  return new Promise(function(resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.onload = function() {
+      if (xhr.status == 200 && xhr.readyState === 4) {
+          resolve(JSON.parse(xhr.responseText)); /* PROMISE RESOLVED */
+      } else {
+          reject(Error(xhr.statusText)); /* PROMISE REJECTED */
+      }
+    };
+    xhr.onerror = function() { reject(Error("Network Error")); };
+    xhr.send();
+  });
 }
 
 function drawPhotos(photos) {
@@ -58,7 +60,7 @@ function drawPhotos(photos) {
     gallery.appendChild(div);
   }
 
-  get('https://randomuser.me/api/', renderProfile);
+  return get('https://randomuser.me/api/');
 }
 
 function renderProfile(users) {
@@ -68,7 +70,7 @@ function renderProfile(users) {
   phone.innerHTML = profile.phone;
   email.innerHTML = profile.email;
 
-  get('https://randomuser.me/api/?results=15', renderFriends);
+  return get('https://randomuser.me/api/?results=15');
 }
 
 function renderFriends(users) {
@@ -83,4 +85,7 @@ function renderFriends(users) {
   }
 }
 
-get('/photo', drawPhotos);
+get('/photo')
+  .then(drawPhotos)
+  .then(renderProfile)
+  .then(renderFriends);
