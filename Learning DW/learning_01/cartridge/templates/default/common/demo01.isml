@@ -1,0 +1,12 @@
+<!--- TEMPLATENAME: demo01.isml --->
+<isinclude template="util/modules"/>
+<h1>Hello world!</h1>
+<h2>List of Products:</h2>
+<isprint value="${session.custom.productsArray}" />
+<ul>
+	<isloop var="product" items="${session.custom.productsArray}">
+		<li>
+			<isproducttile product="${product}" showswatches="${true}" showpricing="${true}" showpromotion="${true}" showrating="${true}" cache="${false}"/>
+		</li>
+	</isloop>
+</ul>

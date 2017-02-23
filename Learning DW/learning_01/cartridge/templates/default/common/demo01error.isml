@@ -1,0 +1,4 @@
+<!--- TEMPLATENAME: demo01error.isml --->
+<h1>Sorry, no product IDs found in HTTP parameters</h1>
+<h2>Your parameters are:</h2>
+<p><isprint value="${request.httpParameterMap}" /></p>
